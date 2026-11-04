@@ -21,6 +21,20 @@ Cada tarea es una carpeta `<Sección>/<Tarea>/` con el enunciado en `task.md`, e
 
 Mientras una tarea no esté resuelta, sus tests fallan, y en algunas ni siquiera compilan.
 
+## Kotlin Tour
+
+`tour/` tiene los ejercicios de práctica del [Kotlin Tour](https://kotlinlang.org/docs/kotlin-tour-welcome.html),
+básico e intermedio, con la misma forma que los koans: cada capítulo es una carpeta y cada ejercicio, una tarea con
+`task.md`, `src/Task.kt` y los tests que el sitio corre por detrás. Los tests corren el `main()` del ejercicio con
+`tour/test-support/ExerciseUtils.kt`, y cuando fallan dicen qué revisar.
+
+```zsh
+./gradlew projects | grep tour-          # nombres de las tareas del Tour
+```
+
+Dos ejercicios no tienen tests: "Declare explicit types for variables" y "Opt in to an experimental API", que es una
+pregunta sin código de partida.
+
 ## Diferencias con el original
 
 - El build corre con Gradle 9 y Kotlin 2.2 sobre Java 17; el original usa Gradle 6, que no arranca con Java 17.
@@ -29,6 +43,9 @@ Mientras una tarea no esté resuelta, sus tests fallan, y en algunas ni siquiera
   calzan: este repo no sirve para editar el curso con EduTools.
 
 Para traer cambios del original, usa "Sync fork" en GitHub. Si tocan una tarea, vuelve a aplicar su placeholder a mano.
+`tour/` no viene del original: se armó a partir de
+[`docs/topics/tour/`](https://github.com/JetBrains/kotlin-web-site/tree/master/docs/topics/tour) y
+[`docs/snippets/tour/`](https://github.com/JetBrains/kotlin-web-site/tree/master/docs/snippets/tour) de kotlin-web-site.
 
 ---
 

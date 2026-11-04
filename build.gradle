@@ -51,6 +51,14 @@ subprojects {
         }
     }
 
+    // The tour tests call the task's main() through ExerciseUtils, so it has to compile with each task.
+    if (projectDir.toPath().startsWith(rootProject.file('tour').toPath()) && file('test').exists()) {
+        sourceSets.test.kotlin.srcDir rootProject.file('tour/test-support')
+        dependencies {
+            testImplementation "org.jetbrains.kotlin:kotlin-test-junit"
+        }
+    }
+
     if (project.hasProperty("mainClass")) {
         application.mainClass = project.getProperty("mainClass")
     }
