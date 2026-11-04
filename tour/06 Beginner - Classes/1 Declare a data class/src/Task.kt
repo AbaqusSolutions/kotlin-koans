@@ -1,4 +1,5 @@
 // Write your code here
+data class Employee(val name: String, var salary: Int)
 
 fun main() {
     val emp = Employee("Mary", 20)
