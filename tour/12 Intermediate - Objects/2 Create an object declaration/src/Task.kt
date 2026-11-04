@@ -3,7 +3,13 @@ interface Vehicle {
     fun move(): String
 }
 
-object // Write your code here
+object FlyingSkateboard : Vehicle {
+    override val name = "Flying Skateboard"
+
+    override fun move(): String = "Glides through the air with a hover engine"
+
+    fun fly(): String = "Woooooooo"
+}// Write your code here
 
 fun main() {
     println("${FlyingSkateboard.name}: ${FlyingSkateboard.move()}")

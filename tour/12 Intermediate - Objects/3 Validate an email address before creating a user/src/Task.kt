@@ -1,5 +1,8 @@
 data class User(val name: String, val email: String) {
-    // Write your code here
+
+    companion object {
+        fun isValidEmail(email: String): Boolean = "@" in email && "." in email
+    }
 }
 
 fun main() {

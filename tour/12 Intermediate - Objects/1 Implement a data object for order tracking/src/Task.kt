@@ -4,13 +4,17 @@ interface Order {
     val orderTotal: Double
 }
 
-data object OrderOne: Order {
+data object OrderOne : Order {
     override val orderId = "001"
     override val customerName = "Alice"
     override val orderTotal = 15.50
 }
 
-data object // Write your code here
+data object OrderTwo : Order {
+    override val orderId = "002"
+    override val customerName = "Bob"
+    override val orderTotal = 0.01
+} // Write your code here
 
 fun main() {
     // Print the name of each data object
