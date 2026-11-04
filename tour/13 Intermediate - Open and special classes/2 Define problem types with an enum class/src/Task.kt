@@ -2,6 +2,7 @@ sealed class Status {
     data object Loading : Status()
     data class Error(val problem: Problem) : Status() {
         // Write your code here
+        enum class Problem { NETWORK, TIMEOUT, UNKNOWN }
     }
 
     data class OK(val data: List<String>) : Status()
