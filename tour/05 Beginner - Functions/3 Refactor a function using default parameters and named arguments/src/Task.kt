@@ -1,12 +1,12 @@
 // Refactor this function: give hours, minutes, and seconds default values of 0
-fun intervalInSeconds(hours: Int, minutes: Int, seconds: Int) =
+fun intervalInSeconds(hours: Int = 0, minutes: Int = 0, seconds: Int = 0) =
     ((hours * 60) + minutes) * 60 + seconds
 
 fun main() {
     // Simplify these calls with named arguments where possible
-    println(intervalInSeconds(1, 20, 15))
-    println(intervalInSeconds(0, 1, 25))
-    println(intervalInSeconds(2, 0, 0))
-    println(intervalInSeconds(0, 10, 0))
-    println(intervalInSeconds(1, 0, 1))
+    println(intervalInSeconds(hours = 1, minutes = 20, seconds = 15))
+    println(intervalInSeconds(minutes = 1, seconds = 25))
+    println(intervalInSeconds(hours = 2))
+    println(intervalInSeconds(minutes = 10))
+    println(intervalInSeconds(hours = 1, seconds = 1))
 }

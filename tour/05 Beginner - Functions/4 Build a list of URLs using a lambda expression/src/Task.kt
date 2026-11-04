@@ -1,5 +1,5 @@
 fun buildUrls(actions: List<String>, prefix: String, id: Int): List<String> {
-    return TODO() // Write your code here
+    return actions.map { action -> "$prefix/$id/$action" }
 }
 
 fun main() {
