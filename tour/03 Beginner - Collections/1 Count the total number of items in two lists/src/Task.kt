@@ -4,4 +4,6 @@ val redNumbers = listOf(17, 2)
 
 fun main() {
     // Write your code here
+    val total = greenNumbers.count() + redNumbers.count()
+    println(total)
 }
