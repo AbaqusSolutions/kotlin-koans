@@ -8,11 +8,10 @@ class Product {
 
 // Rewrite this function
 fun Product.getPriceInEuros(): Double? {
-    val info = getProductInfo()
-    if (info == null) return null
-    val price = info.priceInDollars
-    if (price == null) return null
-    return convertToEuros(price)
+
+    return getProductInfo()?.priceInDollars?.let {
+        convertToEuros(it)
+    }
 }
 
 fun convertToEuros(dollars: Double): Double {
