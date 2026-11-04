@@ -1,6 +1,6 @@
-data class Employee (val name: String, var salary: Int)
+data class Employee(val name: String, var salary: Int)
 
-fun employeeById(id: Int) = when(id) {
+fun employeeById(id: Int) = when (id) {
     1 -> Employee("Mary", 20)
     2 -> null
     3 -> Employee("John", 21)
@@ -8,7 +8,7 @@ fun employeeById(id: Int) = when(id) {
     else -> null
 }
 
-fun salaryById(id: Int): Int = TODO() // Write your code here
+fun salaryById(id: Int): Int = employeeById(id)?.salary ?: 0 // Write your code here
 
 fun main() {
     println((1..5).sumOf { id -> salaryById(id) })
