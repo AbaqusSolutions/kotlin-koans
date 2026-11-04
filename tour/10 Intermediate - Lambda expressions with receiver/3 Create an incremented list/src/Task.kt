@@ -2,6 +2,7 @@ fun List<Int>.incremented(): List<Int> {
     val originalList = this
     return buildList {
         // Write your code here
+        originalList.forEach { add(it + 1) }
     }
 }
 

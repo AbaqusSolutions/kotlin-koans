@@ -22,6 +22,9 @@ fun main() {
 
     button.onEvent {
         // Write your code here
+        if (this.amount == 2) {
+            println("Double click!")
+        }
         // Double click!
     }
 }

@@ -6,6 +6,8 @@ fun fetchData(callback: StringBuilder.() -> Unit) {
 fun main() {
     fetchData {
         // Write your code here
+        append(" - Processed")
+        println(this)
         // Data received - Processed
     }
 }
