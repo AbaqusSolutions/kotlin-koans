@@ -1,16 +1,31 @@
 interface Refundable {
     // Write your code here
+    fun refund(amount: Double)
 }
 
 abstract class PaymentMethod(val name: String) {
     // Write your code here
+    fun authorize(amount: Double) {
+        println("Authorizing payment of $$amount.")
+    }
+
+    abstract fun processPayment(amount: Double)
 }
 
-class CreditCard // Write your code here
+class CreditCard(name: String) : Refundable, PaymentMethod(name) {
+
+    override fun refund(amount: Double) {
+        println("Refunding $$amount to the credit card.")
+    }
+
+    override fun processPayment(amount: Double) {
+        println("Processing credit card payment of $$amount.")
+    }
+} // Write your code here
 
 fun main() {
     val visa = CreditCard("Visa")
-    
+
     visa.authorize(100.0)
     // Authorizing payment of $100.0.
     visa.processPayment(100.0)

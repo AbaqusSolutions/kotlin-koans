@@ -13,12 +13,18 @@ class BasicMessenger : Messenger {
     }
 }
 
-class SmartMessenger // Write your code here
+class SmartMessenger(val messenger: Messenger) : Messenger by messenger {
+
+    override fun sendMessage(message: String) {
+        println("Sending a smart message: $message")
+        messenger.sendMessage("[smart] $message")
+    }
+} // Write your code here
 
 fun main() {
     val basicMessenger = BasicMessenger()
     val smartMessenger = SmartMessenger(basicMessenger)
-    
+
     basicMessenger.sendMessage("Hello!")
     // Sending message: Hello!
     println(smartMessenger.receiveMessage())

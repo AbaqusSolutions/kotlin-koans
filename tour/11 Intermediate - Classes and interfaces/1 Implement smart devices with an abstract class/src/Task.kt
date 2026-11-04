@@ -1,4 +1,7 @@
-abstract class // Write your code here
+abstract class SmartDevice(val name: String) {
+    abstract fun turnOn()
+    abstract fun turnOff()
+}// Write your code here
 
 class SmartLight(name: String) : SmartDevice(name) {
     override fun turnOn() {
@@ -9,17 +12,29 @@ class SmartLight(name: String) : SmartDevice(name) {
         println("$name is now OFF.")
     }
 
-   fun adjustBrightness(level: Int) {
+    fun adjustBrightness(level: Int) {
         println("Adjusting $name brightness to $level%.")
     }
 }
 
-class SmartThermostat // Write your code here
+class SmartThermostat(name: String) : SmartDevice(name) {
+    override fun turnOff() {
+        println("$name thermostat is now off.")
+    }
+
+    override fun turnOn() {
+        println("$name thermostat is now heating.")
+    }
+
+    fun adjustTemperature(degrees: Int) {
+        println("$name thermostat set to $degrees°C.")
+    }
+} // Write your code here
 
 fun main() {
     val livingRoomLight = SmartLight("Living Room Light")
     val bedroomThermostat = SmartThermostat("Bedroom Thermostat")
-    
+
     livingRoomLight.turnOn()
     // Living Room Light is now ON.
     livingRoomLight.adjustBrightness(10)
