@@ -1,3 +1,4 @@
-fun checkInRange(date: MyDate, first: MyDate, last: MyDate): Boolean {
-    return TODO()
+fun checkInRange(date: MyDate, first: MyDate, last: MyDate): Boolean = when {
+    date in first..last -> true
+    else -> false
 }
